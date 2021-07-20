@@ -1,20 +1,17 @@
 import FakeFavUserPetsRepository from '../../repositories/fakes/FakeFavUserPetsRepository';
-import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import FindFavUserPetsService from './FindFavUserPetsService';
 
 
 let fakeFavUserPetsRepository: FakeFavUserPetsRepository;
-let fakeCacheProvider: FakeCacheProvider;
 
 let findFavUserPets: FindFavUserPetsService;
 
 describe('FindPetByUser', () => {
     beforeEach(() => {
         fakeFavUserPetsRepository = new FakeFavUserPetsRepository();
-        fakeCacheProvider = new FakeCacheProvider();
 
         findFavUserPets = new FindFavUserPetsService(
-            fakeFavUserPetsRepository, fakeCacheProvider
+            fakeFavUserPetsRepository,
         );
     });
 

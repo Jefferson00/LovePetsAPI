@@ -32,9 +32,6 @@ import ImagesRepository from '@modules/pets/infra/typeorm/repositories/ImagesRep
 import IFavUserPetsRepository from '@modules/pets/repositories/IFavUserPetsRepository';
 import FavUserPetsRepository from '@modules/pets/infra/typeorm/repositories/FavUserPetsRepository';
 
-import ICacheProvider from './providers/CacheProvider/models/ICacheProvider';
-import RedisCacheProvider from './providers/CacheProvider/implementations/RedisCacheProvider';
-
 container.registerSingleton<IUsersRepository>(
     'UsersRepository',
     UsersRepository,
@@ -79,8 +76,3 @@ container.registerInstance<IMailProvaider>(
         container.resolve(EtherealMailProvider) :
         container.resolve(SESMailProvider),
 );
-
-container.registerSingleton<ICacheProvider>(
-    'CacheProvider',
-    RedisCacheProvider
-)

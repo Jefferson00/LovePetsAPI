@@ -1,5 +1,4 @@
 import IUsersRepository from "@modules/users/repositories/IUsersRepository";
-import ICacheProvider from "@shared/container/providers/CacheProvider/models/ICacheProvider";
 import AppError from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 import Pet from "../../infra/typeorm/entities/Pet";
@@ -27,9 +26,6 @@ class CreatePetService {
 
         @inject('UsersRepository')
         private usersRepository: IUsersRepository,
-
-        @inject('CacheProvider')
-        private cacheProvider: ICacheProvider,
     ) { }
 
     public async execute({
@@ -79,9 +75,6 @@ class CreatePetService {
             city,
             state,
         });
-
-        await this.cacheProvider.invalidate(`user-pets-list:${user_id}`);
-        await this.cacheProvider.invalidatePrefix(`pets-list`);
 
         return pet;
     }

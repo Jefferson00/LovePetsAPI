@@ -1,4 +1,3 @@
-import ICacheProvider from "@shared/container/providers/CacheProvider/models/ICacheProvider";
 import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
 import AppError from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
@@ -17,9 +16,6 @@ class DeleteImageService {
 
         @inject('StorageProvider')
         private storageProvider: IStorageProvider,
-
-        @inject('CacheProvider')
-        private cacheProvider: ICacheProvider,
     ) { }
 
     public async execute({ id, pet_id }: RequestDTO): Promise<void> {
@@ -32,8 +28,6 @@ class DeleteImageService {
         await this.storageProvider.deleteFile(findImage.image);
 
         await this.imagesRepository.delete(id);
-
-        await this.cacheProvider.invalidate(`pet-images-list:${pet_id}`);
     }
 }
 

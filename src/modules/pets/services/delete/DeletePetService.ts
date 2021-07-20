@@ -1,5 +1,4 @@
 import IUsersRepository from "@modules/users/repositories/IUsersRepository";
-import ICacheProvider from "@shared/container/providers/CacheProvider/models/ICacheProvider";
 import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
 import AppError from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
@@ -25,9 +24,6 @@ class DeletePetService {
 
         @inject('StorageProvider')
         private storageProvider: IStorageProvider,
-
-        @inject('CacheProvider')
-        private cacheProvider: ICacheProvider,
     ) { }
 
     public async execute({
@@ -53,9 +49,6 @@ class DeletePetService {
         });
 
         await this.petsRepository.delete(id);
-
-        await this.cacheProvider.invalidate(`user-pets-list:${user_id}`);
-        await this.cacheProvider.invalidatePrefix(`pets-list`);
     }
 }
 

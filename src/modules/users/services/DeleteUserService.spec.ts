@@ -1,5 +1,4 @@
 
-import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvider';
 import AppError from '@shared/errors/AppError';
 import User from '../infra/typeorm/entities/User';
@@ -10,17 +9,15 @@ import DeleteUserService from './DeleteUserService';
 
 let fakeUsersRepository: FakeUsersRepository;
 let fakeStorageProvider: FakeStorageProvider;
-let fakeCacheProvider: FakeCacheProvider;
 let deleteUser: DeleteUserService;
 
 describe('DeleteUser', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
     fakeStorageProvider = new FakeStorageProvider();
-    fakeCacheProvider = new FakeCacheProvider();
 
     deleteUser = new DeleteUserService(
-      fakeUsersRepository, fakeStorageProvider, fakeCacheProvider
+      fakeUsersRepository, fakeStorageProvider,
     );
   });
 

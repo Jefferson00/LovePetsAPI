@@ -1,5 +1,4 @@
 import FakeUsersRepository from "@modules/users/repositories/fakes/FakeUsersRepository";
-import FakeCacheProvider from "@shared/container/providers/CacheProvider/fakes/FakeCacheProvider";
 import AppError from "@shared/errors/AppError";
 import FakePetsRepository from "../../repositories/fakes/FakePetsRepository";
 import UpdatePetService from "./UpdatePetService";
@@ -7,7 +6,6 @@ import UpdatePetService from "./UpdatePetService";
 
 let fakePetsRepository: FakePetsRepository;
 let fakeUsersRepository: FakeUsersRepository;
-let fakeCacheProvider: FakeCacheProvider;
 let updatePet: UpdatePetService;
 
 describe('UpdatePet', () => {
@@ -16,7 +14,7 @@ describe('UpdatePet', () => {
         fakeUsersRepository = new FakeUsersRepository();
 
         updatePet = new UpdatePetService(
-            fakePetsRepository, fakeUsersRepository, fakeCacheProvider,
+            fakePetsRepository, fakeUsersRepository,
         )
     });
 

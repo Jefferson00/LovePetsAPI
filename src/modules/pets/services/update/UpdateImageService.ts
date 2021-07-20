@@ -1,5 +1,4 @@
 
-import ICacheProvider from "@shared/container/providers/CacheProvider/models/ICacheProvider";
 import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
 import AppError from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
@@ -21,8 +20,6 @@ class UpdateImageService {
         @inject('StorageProvider')
         private storageProvider: IStorageProvider,
 
-        @inject('CacheProvider')
-        private cacheProvider: ICacheProvider,
     ) { }
 
     public async execute({
@@ -43,8 +40,6 @@ class UpdateImageService {
         findImage.image = filename;
 
         await this.imagesRepository.save(findImage);
-
-        await this.cacheProvider.invalidate(`pet-images-list:${pet_id}`);
 
         return findImage;
     }

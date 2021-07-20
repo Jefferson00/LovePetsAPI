@@ -1,3 +1,17 @@
+instalar o docker
+
+instalar a imagem do postgres
+instalar a imagem do redis
+
+clone
+
+cria .env
+cria ormconfig.json
+
+run migrations
+
+yarn dev
+
 # Recuperação de senha
 
 **RF**

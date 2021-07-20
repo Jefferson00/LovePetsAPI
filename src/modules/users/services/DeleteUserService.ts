@@ -3,7 +3,6 @@ import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
-import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 
 @injectable()
 class DeleteUserService {
@@ -13,9 +12,6 @@ class DeleteUserService {
 
     @inject('StorageProvider')
     private storageProvider: IStorageProvider,
-
-    @inject('CacheProvider')
-    private cacheProvider: ICacheProvider,
   ) { }
   public async execute(id: string): Promise<void> {
     const checkUserExists = await this.usersRepository.findById(id);
@@ -29,10 +25,6 @@ class DeleteUserService {
     }
 
     await this.usersRepository.delete(id);
-
-    await this.cacheProvider.invalidatePrefix(`pets-list`);
-    await this.cacheProvider.invalidatePrefix(`user-favs-pets-list`);
-    //await this.cacheProvider.invalidate(`user-pets-list:${id}`);
   }
 }
 

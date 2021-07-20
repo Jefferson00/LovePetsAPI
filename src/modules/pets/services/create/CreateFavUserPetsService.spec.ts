@@ -1,5 +1,4 @@
 import FakeUsersRepository from "@modules/users/repositories/fakes/FakeUsersRepository";
-import FakeCacheProvider from "@shared/container/providers/CacheProvider/fakes/FakeCacheProvider";
 import AppError from "@shared/errors/AppError";
 import FakeFavUserPetsRepository from "../../repositories/fakes/FakeFavUserPetsRepository";
 import FakePetsRepository from "../../repositories/fakes/FakePetsRepository";
@@ -9,21 +8,18 @@ import CreateFavUserPetsService from "./CreateFavUserPetsService";
 let fakePetsRepository: FakePetsRepository;
 let fakeUsersRepository: FakeUsersRepository;
 let fakeFavUserPetsRepository: FakeFavUserPetsRepository;
-let fakeCacheProvider: FakeCacheProvider;
 let createFavUserPet: CreateFavUserPetsService;
 
 describe('CreateFavUserPets', () => {
     beforeEach(() => {
         fakePetsRepository = new FakePetsRepository();
         fakeUsersRepository = new FakeUsersRepository();
-        fakeCacheProvider = new FakeCacheProvider();
         fakeFavUserPetsRepository = new FakeFavUserPetsRepository();
 
         createFavUserPet = new CreateFavUserPetsService(
             fakeFavUserPetsRepository,
             fakePetsRepository,
             fakeUsersRepository,
-            fakeCacheProvider,
         );
     });
 

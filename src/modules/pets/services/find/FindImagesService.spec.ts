@@ -1,19 +1,16 @@
-import FakeCacheProvider from "@shared/container/providers/CacheProvider/fakes/FakeCacheProvider";
 import FakeImagesRepository from "../../repositories/fakes/FakeImagesRepository";
 import FindImagesService from "./FindImagesService";
 
 
 let fakeImagesRepository: FakeImagesRepository;
-let fakeCacheProvider: FakeCacheProvider;
 let findImages: FindImagesService;
 
 describe('FindImages', () => {
     beforeEach(() => {
         fakeImagesRepository = new FakeImagesRepository();
-        fakeCacheProvider = new FakeCacheProvider();
 
         findImages = new FindImagesService(
-            fakeImagesRepository, fakeCacheProvider
+            fakeImagesRepository,
         );
     });
 

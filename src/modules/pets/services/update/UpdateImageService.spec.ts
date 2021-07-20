@@ -1,5 +1,4 @@
 
-import FakeCacheProvider from "@shared/container/providers/CacheProvider/fakes/FakeCacheProvider";
 import FakeStorageProvider from "@shared/container/providers/StorageProvider/fakes/FakeStorageProvider";
 import AppError from "@shared/errors/AppError";
 import FakeImagesRepository from "../../repositories/fakes/FakeImagesRepository";
@@ -8,7 +7,6 @@ import UpdateImageService from "./UpdateImageService";
 
 let fakeImagesRepository: FakeImagesRepository;
 let fakeStorageProvider: FakeStorageProvider;
-let fakeCacheProvider: FakeCacheProvider;
 let updateImagePet: UpdateImageService;
 
 describe('UpdateImagePet', () => {
@@ -17,7 +15,7 @@ describe('UpdateImagePet', () => {
         fakeStorageProvider = new FakeStorageProvider();
 
         updateImagePet = new UpdateImageService(
-            fakeImagesRepository, fakeStorageProvider, fakeCacheProvider
+            fakeImagesRepository, fakeStorageProvider,
         );
     });
 
