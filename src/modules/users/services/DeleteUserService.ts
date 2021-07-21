@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '../../../shared/errors/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
-import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
+import IStorageProvider from '../../../shared/container/providers/StorageProvider/models/IStorageProvider';
 
 @injectable()
 class DeleteUserService {

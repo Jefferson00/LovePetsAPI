@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { classToClass } from 'class-transformer';
 
-import CreateFavUserPetsService from "@modules/pets/services/create/CreateFavUserPetsService";
-import FindFavUserPetsService from "@modules/pets/services/find/FindFavUserPetsService";
-import DeleteFavUserPetsService from "@modules/pets/services/delete/DeleteFavUserPetsService";
+import CreateFavUserPetsService from "../../../services/create/CreateFavUserPetsService";
+import FindFavUserPetsService from "../../../services/find/FindFavUserPetsService";
+import DeleteFavUserPetsService from "../../../services/delete/DeleteFavUserPetsService";
 
 export default class FavUserPetsController {
     public async index(request: Request, response: Response): Promise<Response> {

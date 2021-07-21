@@ -1,5 +1,5 @@
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
-import AppError from "@shared/errors/AppError";
+import IUsersRepository from "../../../users/repositories/IUsersRepository";
+import AppError from "../../../../shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 import FavUserPets from "../../infra/typeorm/entities/FavUserPets";
 import IFavUserPetsRepository from "../../repositories/IFavUserPetsRepository";

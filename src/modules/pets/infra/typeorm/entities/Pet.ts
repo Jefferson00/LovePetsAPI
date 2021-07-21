@@ -1,16 +1,16 @@
 import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    CreateDateColumn,
-    UpdateDateColumn,
-    ManyToOne,
-    JoinColumn,
-  } from 'typeorm';
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 
-  
-import {Exclude, Expose} from 'class-transformer';
-import User from '@modules/users/infra/typeorm/entities/User';
+
+import { Exclude, Expose } from 'class-transformer';
+import User from '../../../../users/infra/typeorm/entities/User';
 
 @Entity('pets')
 class Pet {
@@ -21,7 +21,7 @@ class Pet {
   user_id: string;
 
   @ManyToOne(() => User)
-  @JoinColumn({name: 'user_id'})
+  @JoinColumn({ name: 'user_id' })
   @Exclude()
   user: User;
 
@@ -61,16 +61,16 @@ class Pet {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Expose({name: 'user_name'})
-  getUserName():string{
+  @Expose({ name: 'user_name' })
+  getUserName(): string {
     return this.user.name;
   }
-  @Expose({name: 'user_phone'})
-  getUserPhone():string{
+  @Expose({ name: 'user_phone' })
+  getUserPhone(): string {
     return this.user.phone;
   }
-  @Expose({name: 'user_avatar'})
-  getUserAvatar():string{
+  @Expose({ name: 'user_avatar' })
+  getUserAvatar(): string {
     return this.user.getAvatarUrl();
   }
 }

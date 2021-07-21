@@ -1,6 +1,6 @@
 
-import FakeStorageProvider from "@shared/container/providers/StorageProvider/fakes/FakeStorageProvider";
-import AppError from "@shared/errors/AppError";
+import FakeStorageProvider from "../../../../shared/container/providers/StorageProvider/fakes/FakeStorageProvider";
+import AppError from "../../../../shared/errors/AppError";
 import FakeImagesRepository from "../../repositories/fakes/FakeImagesRepository";
 import UpdateImageService from "./UpdateImageService";
 

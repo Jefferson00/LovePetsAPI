@@ -2,10 +2,10 @@ import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { classToClass } from "class-transformer";
 
-import CreateImageService from "@modules/pets/services/create/CreateImageService";
-import DeleteImageService from "@modules/pets/services/delete/DeleteImageService";
-import FindImagesService from "@modules/pets/services/find/FindImagesService";
-import UpdateImageService from "@modules/pets/services/update/UpdateImageService";
+import CreateImageService from "../../../services/create/CreateImageService";
+import DeleteImageService from "../../../services/delete/DeleteImageService";
+import FindImagesService from "../../../services/find/FindImagesService";
+import UpdateImageService from "../../../services/update/UpdateImageService";
 
 export default class ImagesController {
     public async index(request: Request, response: Response): Promise<Response> {

@@ -1,5 +1,5 @@
-import CreateUserDTO from "@modules/users/dtos/ICreateUserDTO";
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
+import CreateUserDTO from "../../dtos/ICreateUserDTO";
+import IUsersRepository from "../IUsersRepository";
 
 import { uuid } from 'uuidv4';
 

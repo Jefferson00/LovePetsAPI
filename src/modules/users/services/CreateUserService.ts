@@ -1,7 +1,7 @@
-import {inject, injectable} from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 
-import User from '@modules/users/infra/typeorm/entities/User';
-import AppError from '@shared/errors/AppError';
+import User from '../../users/infra/typeorm/entities/User';
+import AppError from '../../../shared/errors/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
@@ -20,8 +20,8 @@ class CreateUserService {
 
         @inject('HashProvider')
         private hashProvider: IHashProvider,
-    ){}
-    public async execute({name, email, password, phone}: Request): Promise<User> {
+    ) { }
+    public async execute({ name, email, password, phone }: Request): Promise<User> {
         const checkUserExists = await this.usersRepository.findByEmailOrPhone(email, phone);
 
         if (checkUserExists) {

@@ -1,7 +1,7 @@
 import { uuid } from "uuidv4";
 
-import ICreateImageDTO from "@modules/pets/dtos/ICreateImageDTO";
-import Image from "@modules/pets/infra/typeorm/entities/Image";
+import ICreateImageDTO from "../../../pets/dtos/ICreateImageDTO";
+import Image from "../../../pets/infra/typeorm/entities/Image";
 import IImagesRepository from "../IImagesRepository";
 
 

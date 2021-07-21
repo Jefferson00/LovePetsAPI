@@ -1,6 +1,6 @@
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
-import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
-import AppError from "@shared/errors/AppError";
+import IUsersRepository from "../../../users/repositories/IUsersRepository";
+import IStorageProvider from "../../../../shared/container/providers/StorageProvider/models/IStorageProvider";
+import AppError from "../../../../shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 import IImagesRepository from "../../repositories/IImagesRepository";
 import IPetsRepository from "../../repositories/IPetsRepository";

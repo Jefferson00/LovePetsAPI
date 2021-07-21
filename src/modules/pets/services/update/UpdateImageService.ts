@@ -1,6 +1,6 @@
 
-import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
-import AppError from "@shared/errors/AppError";
+import IStorageProvider from "../../../../shared/container/providers/StorageProvider/models/IStorageProvider";
+import AppError from "../../../../shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 import Image from "../../infra/typeorm/entities/Image";
 import IImagesRepository from "../../repositories/IImagesRepository";

@@ -6,12 +6,12 @@ import routes from './routes';
 import cors from 'cors';
 import { errors } from 'celebrate';
 
-import uploadConfig from '@config/upload';
-import AppError from "@shared/errors/AppError";
+import uploadConfig from '../../../config/upload';
+import AppError from "../../errors/AppError";
 
 
-import '@shared/infra/database';
-import '@shared/container';
+import '../database';
+import '../../container';
 
 
 const app = express();
@@ -27,19 +27,19 @@ app.use(routes);
 app.use(errors());
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
-    if (err instanceof AppError) {
-      return response.status(err.statusCode).json({
-        status: 'error',
-        message: err.message,
-      });
-    }
-  
-    console.error(err);
-  
-    return response.status(500).json({
+  if (err instanceof AppError) {
+    return response.status(err.statusCode).json({
       status: 'error',
-      message: 'Internal server error',
+      message: err.message,
     });
+  }
+
+  console.error(err);
+
+  return response.status(500).json({
+    status: 'error',
+    message: 'Internal server error',
   });
+});
 
 app.listen(3333, () => console.log('Server is up!'));

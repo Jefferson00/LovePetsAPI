@@ -1,16 +1,16 @@
 import { container } from 'tsyringe';
 
-import '@modules/users/providers'
-import '@modules/pets/providers'
+import '../../modules/users/providers'
+import '../../modules/pets/providers'
 
-import mailConfig from '@config/mail';
-import uploadConfig from '@config/upload';
+import mailConfig from '../../config/mail';
+import uploadConfig from '../../config/upload';
 
-import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
-import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+import UsersRepository from '../../modules/users/infra/typeorm/repositories/UsersRepository';
+import IUsersRepository from '../../modules/users/repositories/IUsersRepository';
 
-import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
-import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
+import IUserTokensRepository from '../../modules/users/repositories/IUserTokensRepository';
+import UserTokensRepository from '../../modules/users/infra/typeorm/repositories/UserTokensRepository';
 
 import IMailProvaider from './providers/MailProvider/models/IMailProvider';
 import EtherealMailProvider from './providers/MailProvider/implementations/EtherealMailProvider';
@@ -23,14 +23,14 @@ import IStorageProvider from './providers/StorageProvider/models/IStorageProvide
 import DiskStorageProvider from './providers/StorageProvider/implementations/DiskStorageProvider';
 import S3StorageProvider from './providers/StorageProvider/implementations/S3StorageProvider';
 
-import IPetsRepository from '@modules/pets/repositories/IPetsRepository';
-import PetsRepository from '@modules/pets/infra/typeorm/repositories/PetsRepository';
+import IPetsRepository from '../../modules/pets/repositories/IPetsRepository';
+import PetsRepository from '../../modules/pets/infra/typeorm/repositories/PetsRepository';
 
-import IImagesRepository from '@modules/pets/repositories/IImagesRepository';
-import ImagesRepository from '@modules/pets/infra/typeorm/repositories/ImagesRepository';
+import IImagesRepository from '../../modules/pets/repositories/IImagesRepository';
+import ImagesRepository from '../../modules/pets/infra/typeorm/repositories/ImagesRepository';
 
-import IFavUserPetsRepository from '@modules/pets/repositories/IFavUserPetsRepository';
-import FavUserPetsRepository from '@modules/pets/infra/typeorm/repositories/FavUserPetsRepository';
+import IFavUserPetsRepository from '../../modules/pets/repositories/IFavUserPetsRepository';
+import FavUserPetsRepository from '../../modules/pets/infra/typeorm/repositories/FavUserPetsRepository';
 
 container.registerSingleton<IUsersRepository>(
     'UsersRepository',

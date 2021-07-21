@@ -2,9 +2,9 @@ import { inject, injectable } from 'tsyringe';
 
 import path from 'path';
 
-import IMailProvaider from '@shared/container/providers/MailProvider/models/IMailProvider';
+import IMailProvaider from '../../../shared/container/providers/MailProvider/models/IMailProvider';
 import IPetsRepository from '../repositories/IPetsRepository';
-import AppError from '@shared/errors/AppError';
+import AppError from "../../../shared/errors/AppError";
 
 interface Request {
   pet_id: string;

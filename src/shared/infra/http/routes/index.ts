@@ -1,13 +1,13 @@
 import { Router } from 'express';
 
-import usersRouter from '@modules/users/infra/http/routes/users.routes';
-import sessionsRouter from '@modules/users/infra/http/routes/sessions.routes';
-import passwordRouter from '@modules/users/infra/http/routes/password.routes';
-import profileRouter from '@modules/users/infra/http/routes/profile.routes';
-import petsRouter from '@modules/pets/infra/http/routes/pets.routes';
-import imagesRouter from '@modules/pets/infra/http/routes/images.routes';
-import favsRouter from '@modules/pets/infra/http/routes/favsUserPets.routes';
-import reportRouter from '@modules/pets/infra/http/routes/report.routes';
+import usersRouter from '../../../../modules/users/infra/http/routes/users.routes';
+import sessionsRouter from '../../../../modules/users/infra/http/routes/sessions.routes';
+import passwordRouter from '../../../../modules/users/infra/http/routes/password.routes';
+import profileRouter from '../../../../modules/users/infra/http/routes/profile.routes';
+import petsRouter from '../../../../modules/pets/infra/http/routes/pets.routes';
+import imagesRouter from '../../../../modules/pets/infra/http/routes/images.routes';
+import favsRouter from '../../../../modules/pets/infra/http/routes/favsUserPets.routes';
+import reportRouter from '../../../../modules/pets/infra/http/routes/report.routes';
 
 const routes = Router();
 

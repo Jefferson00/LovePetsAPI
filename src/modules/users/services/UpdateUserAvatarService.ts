@@ -1,9 +1,9 @@
 import { injectable, inject } from 'tsyringe';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '../../../shared/errors/AppError';
 
-import User from '@modules/users/infra/typeorm/entities/User';
-import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
+import User from '../../users/infra/typeorm/entities/User';
+import IStorageProvider from '../../../shared/container/providers/StorageProvider/models/IStorageProvider';
 import IUsersRepository from '../repositories/IUsersRepository';
 
 interface IRequestDTO {

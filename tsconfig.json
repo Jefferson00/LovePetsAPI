@@ -1,26 +1,35 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",                         
-    "outDir": "./dist",                              
-    "rootDir": "./src",                             
-    "removeComments": true,                      
-    "baseUrl": "./src", 
-    "allowJs": true,                            
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "baseUrl": "./src",
+    "allowJs": false,
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@config/*": ["config/*"],
-      "@shared/*": ["shared/*"]
-    },                                 
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ]
+    },
     "typeRoots": [
       "./node_modules/@types",
-       "./src/@types"
-      ],                             
-    "esModuleInterop": true,                        
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,              
-    "emitDecoratorMetadata": true,               
-    "skipLibCheck": true,                           
-    "forceConsistentCasingInFileNames": true        
-  }
+      "./src/@types"
+    ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "./dist"
+  ]
 }

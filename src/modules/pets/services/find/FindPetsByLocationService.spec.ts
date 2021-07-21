@@ -1,7 +1,7 @@
 
 import FakeGeoProvider from '../../providers/GeoProvider/fakes/FakeGeoProvider';
 import FakePetsRepository from "../../repositories/fakes/FakePetsRepository";
-import FakeUsersRepository from "@modules/users/repositories/fakes/FakeUsersRepository";
+import FakeUsersRepository from "../../../users/repositories/fakes/FakeUsersRepository";
 import FindPetsByLocationService from "./FindPetsByLocationService";
 import CreatePetService from "../create/CreatePetService";
 

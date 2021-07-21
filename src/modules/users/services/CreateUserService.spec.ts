@@ -1,5 +1,5 @@
 
-import AppError from '@shared/errors/AppError';
+import AppError from '../../../shared/errors/AppError';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import CreateUserService from './CreateUserService';
@@ -10,7 +10,7 @@ describe('CreateUser', () => {
         const fakeHashProvider = new FakeHashProvider();
 
         const createUser = new CreateUserService(
-            fakeUsersRepository,fakeHashProvider,
+            fakeUsersRepository, fakeHashProvider,
         );
 
         const user = await createUser.execute({
@@ -27,7 +27,7 @@ describe('CreateUser', () => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
         const createUser = new CreateUserService(
-            fakeUsersRepository,fakeHashProvider,
+            fakeUsersRepository, fakeHashProvider,
         );
 
         await createUser.execute({
@@ -49,7 +49,7 @@ describe('CreateUser', () => {
         const fakeUsersRepository = new FakeUsersRepository();
         const fakeHashProvider = new FakeHashProvider();
         const createUser = new CreateUserService(
-            fakeUsersRepository,fakeHashProvider,
+            fakeUsersRepository, fakeHashProvider,
         );
 
         await createUser.execute({

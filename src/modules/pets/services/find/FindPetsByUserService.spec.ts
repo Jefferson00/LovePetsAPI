@@ -1,5 +1,5 @@
 import FakePetsRepository from "../../repositories/fakes/FakePetsRepository";
-import FakeUsersRepository from "@modules/users/repositories/fakes/FakeUsersRepository";
+import FakeUsersRepository from "../../../users/repositories/fakes/FakeUsersRepository";
 import CreatePetService from "../create/CreatePetService";
 import FindPetsByUserService from './FindPetsByUserService';
 

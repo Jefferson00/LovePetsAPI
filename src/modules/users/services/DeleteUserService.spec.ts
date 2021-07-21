@@ -1,10 +1,7 @@
 
-import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvider';
-import AppError from '@shared/errors/AppError';
-import User from '../infra/typeorm/entities/User';
-import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
+import FakeStorageProvider from '../../../shared/container/providers/StorageProvider/fakes/FakeStorageProvider';
+import AppError from '../../../shared/errors/AppError';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
-import CreateUserService from './CreateUserService';
 import DeleteUserService from './DeleteUserService';
 
 let fakeUsersRepository: FakeUsersRepository;

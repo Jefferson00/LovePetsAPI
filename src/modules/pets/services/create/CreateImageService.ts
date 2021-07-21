@@ -1,5 +1,5 @@
 
-import IStorageProvider from "@shared/container/providers/StorageProvider/models/IStorageProvider";
+import IStorageProvider from "../../../../shared/container/providers/StorageProvider/models/IStorageProvider";
 import { inject, injectable } from "tsyringe";
 import Image from "../../infra/typeorm/entities/Image";
 import IImagesRepository from "../../repositories/IImagesRepository";

@@ -1,5 +1,5 @@
-import FakeUsersRepository from "@modules/users/repositories/fakes/FakeUsersRepository";
-import AppError from "@shared/errors/AppError";
+import FakeUsersRepository from "../../../users/repositories/fakes/FakeUsersRepository";
+import AppError from "../../../../shared/errors/AppError";
 import FakePetsRepository from "../../repositories/fakes/FakePetsRepository";
 import UpdatePetService from "./UpdatePetService";
 

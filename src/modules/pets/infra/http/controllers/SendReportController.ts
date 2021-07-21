@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import SendReportService from "@modules/pets/services/SendReportService";
+import SendReportService from "../../../services/SendReportService";
 
 export default class SendReportController {
   public async create(request: Request, response: Response): Promise<Response> {

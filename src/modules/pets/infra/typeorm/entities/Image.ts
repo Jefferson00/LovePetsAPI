@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
-import uploadConfig from '@config/upload';
+import uploadConfig from '../../../../../config/upload';
 
 import Pet from './Pet';
 

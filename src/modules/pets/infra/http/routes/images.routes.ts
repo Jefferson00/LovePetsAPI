@@ -1,5 +1,5 @@
-import uploadConfig from '@config/upload';
-import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
+import uploadConfig from '../../../../../config/upload';
+import ensureAuthenticated from '../../../../users/infra/http/middlewares/ensureAuthenticated';
 import { Router } from 'express';
 import multer from 'multer';
 import ImagesController from '../controllers/ImagesController';

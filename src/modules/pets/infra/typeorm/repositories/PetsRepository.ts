@@ -1,7 +1,7 @@
-import ICreatePetDTO from "@modules/pets/dtos/ICreatePetDTO";
-import IFindByDistanceDTO from "@modules/pets/dtos/IFindByDistanceDTO";
-import Pet from "@modules/pets/infra/typeorm/entities/Pet";
-import IPetsRepository from "@modules/pets/repositories/IPetsRepository";
+import ICreatePetDTO from "../../../../pets/dtos/ICreatePetDTO";
+import IFindByDistanceDTO from "../../../../pets/dtos/IFindByDistanceDTO";
+import Pet from "../../../../pets/infra/typeorm/entities/Pet";
+import IPetsRepository from "../../../../pets/repositories/IPetsRepository";
 import { getRepository, Repository } from "typeorm";
 
 

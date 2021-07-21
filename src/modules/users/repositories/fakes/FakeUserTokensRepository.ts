@@ -1,4 +1,4 @@
-import UserToken from "@modules/users/infra/typeorm/entities/UserToken";
+import UserToken from "../../infra/typeorm/entities/UserToken";
 
 import { uuid } from 'uuidv4';
 

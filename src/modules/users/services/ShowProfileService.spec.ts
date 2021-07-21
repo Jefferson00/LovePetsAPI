@@ -1,4 +1,4 @@
-import AppError from '@shared/errors/AppError';
+import AppError from '../../../shared/errors/AppError';
 
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import ShowProfileService from './ShowProfileService';
@@ -33,8 +33,8 @@ describe('UpdateProfile', () => {
 
   it('should not be able to show the profile from non-existing user', async () => {
     expect(showProfile.execute({
-        user_id: 'non-existing-user.id',
-      })).rejects.toBeInstanceOf(AppError);
+      user_id: 'non-existing-user.id',
+    })).rejects.toBeInstanceOf(AppError);
   });
 
 });

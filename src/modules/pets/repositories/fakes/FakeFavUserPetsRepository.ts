@@ -1,5 +1,5 @@
 import { uuid } from "uuidv4";
-import FavUserPets from "@modules/pets/infra/typeorm/entities/FavUserPets";
+import FavUserPets from "../../../pets/infra/typeorm/entities/FavUserPets";
 import IFavUserPetsRepository from "../IFavUserPetsRepository";
 
 class FakeFavUserPetsRepository implements IFavUserPetsRepository {
